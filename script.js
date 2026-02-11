@@ -5,7 +5,6 @@ const letter = document.getElementById("letter");
 const finalMessage = document.getElementById("finalMessage");
 const music = document.getElementById("music");
 const heartsContainer = document.getElementById("hearts-container");
-
 // ----------------------
 // 🔥 Messages NON (à modifier)
 // ----------------------
@@ -42,10 +41,13 @@ yesBtn.addEventListener("click", () => {
     document.getElementById("choices").style.display = "none";
     document.querySelector(".question").style.display = "none";
     msg.style.display = "none";
+
     // afficher texte final
-    setTimeout(() => {
-        finalMessage.style.display = "block";
-    }, 800);
+setTimeout(() => {
+    finalMessage.style.display = "block";
+    // faire pousser le buisson de roses 🌹
+    document.getElementById("roseBush").classList.add("grow");
+}, 800);
 });
 // ----------------------
 // 💕 CŒURS QUI TOMBENT
