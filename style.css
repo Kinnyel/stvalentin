@@ -9,14 +9,32 @@ body {
     overflow: hidden;
 }
 
-/* CŒURS QUI TOMBENT */
-#hearts-container div {
+/* PAPILLONS  */
+#butterflies-container {
+    pointer-events: none; 
+}
+
+.butterfly {
     position: fixed;
-    top: -10px;
-    color: #ff5a7c;
-    font-size: 20px;
-    animation: fall linear infinite;
-    opacity: 0.8;
+    top: -10vh;
+    width: 36px;          /* taille d’un papillon */
+    height: 28px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    animation: flutter linear forwards;
+    will-change: transform;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.25));
+}
+
+/* Animation de vol qui descend en ondulant */
+@keyframes flutter {
+    0%   { transform: translate3d(var(--x,0), -10vh, 0) rotate(0deg); }
+    25%  { transform: translate3d(calc(var(--x,0) + 20px), 20vh, 0) rotate(10deg); }
+    50%  { transform: translate3d(calc(var(--x,0) - 15px), 50vh, 0) rotate(-8deg); }
+    75%  { transform: translate3d(calc(var(--x,0) + 10px), 80vh, 0) rotate(6deg); }
+    100% { transform: translate3d(var(--x,0), 110vh, 0) rotate(0deg); }
+}
 }
 @keyframes fall {
     to {
@@ -105,3 +123,4 @@ body {
     height: 200px;  /* hauteur du buisson */
     opacity: 1;
 }
+
