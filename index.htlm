@@ -17,7 +17,7 @@
     <audio id="music" src="13 Billie Eilish - i love you.mp3" preload="auto"></audio>
 
     <!-- CŒURS QUI TOMBENT -->
-    <div id="hearts-container"></div>
+  <div id="butterflies-container"></div>
 
     <!-- LETTRE -->
     <div id="letter" class="closed">
@@ -47,3 +47,4 @@
     </div>
 </body>
 </html>
+
